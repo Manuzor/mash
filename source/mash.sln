@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mashCore", "mashCore\mashCore.csproj", "{C18783FB-440D-45C7-8757-2C7C9595ABAF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mashGUI", "mashGUI\mashGUI.csproj", "{F607B084-3876-4523-ABC7-4EECD5DBA0B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{C18783FB-440D-45C7-8757-2C7C9595ABAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C18783FB-440D-45C7-8757-2C7C9595ABAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C18783FB-440D-45C7-8757-2C7C9595ABAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F607B084-3876-4523-ABC7-4EECD5DBA0B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F607B084-3876-4523-ABC7-4EECD5DBA0B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F607B084-3876-4523-ABC7-4EECD5DBA0B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F607B084-3876-4523-ABC7-4EECD5DBA0B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
