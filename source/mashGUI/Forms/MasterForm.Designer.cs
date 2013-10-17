@@ -30,11 +30,11 @@
 		{
 			System.Windows.Forms.MenuStrip mainMenuStrip;
 			System.Windows.Forms.StatusStrip globalStatusBar;
-			System.Windows.Forms.ToolStripStatusLabel globalStatus;
 			System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MasterForm));
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.teststdinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.globalStatus = new System.Windows.Forms.ToolStripStatusLabel();
 			this.globalProgressBar = new System.Windows.Forms.ToolStripProgressBar();
 			this.shellBar = new System.Windows.Forms.ToolStrip();
 			this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -42,7 +42,6 @@
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			mainMenuStrip = new System.Windows.Forms.MenuStrip();
 			globalStatusBar = new System.Windows.Forms.StatusStrip();
-			globalStatus = new System.Windows.Forms.ToolStripStatusLabel();
 			toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
 			mainMenuStrip.SuspendLayout();
 			globalStatusBar.SuspendLayout();
@@ -77,7 +76,7 @@
 			// globalStatusBar
 			// 
 			globalStatusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            globalStatus,
+            this.globalStatus,
             toolStripStatusLabel1,
             this.globalProgressBar});
 			globalStatusBar.Location = new System.Drawing.Point(0, 379);
@@ -88,9 +87,9 @@
 			// 
 			// globalStatus
 			// 
-			globalStatus.Name = "globalStatus";
-			globalStatus.Size = new System.Drawing.Size(42, 18);
-			globalStatus.Text = global::mash.gui.Properties.Settings.Default.GlobalStatusLine;
+			this.globalStatus.Name = "globalStatus";
+			this.globalStatus.Size = new System.Drawing.Size(42, 18);
+			this.globalStatus.Text = global::mash.gui.Properties.Settings.Default.GlobalStatusLine;
 			// 
 			// toolStripStatusLabel1
 			// 
@@ -134,6 +133,7 @@
 			this.shellTabs.SelectedIndex = 0;
 			this.shellTabs.Size = new System.Drawing.Size(670, 330);
 			this.shellTabs.TabIndex = 3;
+			this.shellTabs.TabStop = false;
 			// 
 			// tabPage1
 			// 
@@ -182,5 +182,6 @@
 		private System.Windows.Forms.ToolStripProgressBar globalProgressBar;
 		private System.Windows.Forms.TabPage tabPage1;
 		private System.Windows.Forms.ToolStripMenuItem teststdinToolStripMenuItem;
+		private System.Windows.Forms.ToolStripStatusLabel globalStatus;
 	}
 }

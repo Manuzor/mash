@@ -12,16 +12,21 @@ namespace mash.gui
 {
 	public partial class MasterForm : Form
 	{
+		private Keys _currentKey;
+		private int _counter;
+
 		public string InputBuffer { get; set; }
 
 		public MasterForm()
 		{
 			InitializeComponent();
+			_currentKey = Keys.None;
+			_counter = 0;
 		}
 
-		private void toolStripButton1_Click(object sender, EventArgs e)
+		private TabPage addShell(string name)
 		{
-			var page = new TabPage("cmd");
+			var page = new TabPage(name);
 			page.Margin = Padding.Empty;
 			page.Padding = Padding.Empty;
 			page.BackColor = Color.Black;
@@ -30,6 +35,12 @@ namespace mash.gui
 
 			page.Controls.Add(shell);
 			shellTabs.TabPages.Add(page);
+			return page;
+		}
+
+		private void toolStripButton1_Click(object sender, EventArgs e)
+		{
+			shellTabs.SelectedTab = addShell("cmd");
 		}
 
 		private void teststdinToolStripMenuItem_Click(object sender, EventArgs e)
@@ -45,7 +56,15 @@ namespace mash.gui
 
 		private void MasterForm_KeyDown(object sender, KeyEventArgs e)
 		{
-			//TODO: Implement.
+			if (_currentKey != e.KeyData)
+			{
+				_currentKey = e.KeyData;
+				_counter = 0;
+			}
+			globalStatus.Text = string.Format("{0}: {1} ({2})", e.Modifiers, e.KeyData, _counter);
+			++_counter;
+
+			e.Handled = true;
 		}
 	}
 }
