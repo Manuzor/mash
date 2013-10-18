@@ -18,6 +18,7 @@
 *.log
 *.sbr
 obj/
+bin/
 _ReSharper*/
 [Tt]est[Rr]esult*
 ipch
