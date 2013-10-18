@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Exceptions\Base.cs" />
-    <Compile Include="Exceptions\Internal\Internal.cs" />
+    <Compile Include="Exceptions\Internal\Base.cs" />
     <Compile Include="Exceptions\InvalidArgument.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

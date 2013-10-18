@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TargetStandardFile.cs" />
     <Compile Include="Manager.cs" />
     <Compile Include="MessageLevel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

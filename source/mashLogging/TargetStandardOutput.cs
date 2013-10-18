@@ -45,7 +45,7 @@ namespace mash.Logging
 			}
 		}
 
-		public void logMessage(string message, MessageLevel level)
+		public void logMessage(string message, MessageLevel level = MessageLevel.Normal)
 		{
 			Console.WriteLine(message);
 			if (ColorScheme.ContainsKey(level))

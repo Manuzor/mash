@@ -8,6 +8,6 @@ namespace mash.Logging
 {
 	public interface ITarget
 	{
-		void logMessage(string message, MessageLevel level);
+		void logMessage(string message, MessageLevel level = MessageLevel.Normal);
 	}
 }
