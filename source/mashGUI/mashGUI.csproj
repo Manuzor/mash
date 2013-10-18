@@ -44,6 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\ShellTabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\ShellView.cs">
       <SubType>UserControl</SubType>
     </Compile>

@@ -39,14 +39,12 @@
 			this.shellBar = new System.Windows.Forms.ToolStrip();
 			this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
 			this.shellTabs = new System.Windows.Forms.TabControl();
-			this.tabPage1 = new System.Windows.Forms.TabPage();
 			mainMenuStrip = new System.Windows.Forms.MenuStrip();
 			globalStatusBar = new System.Windows.Forms.StatusStrip();
 			toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
 			mainMenuStrip.SuspendLayout();
 			globalStatusBar.SuspendLayout();
 			this.shellBar.SuspendLayout();
-			this.shellTabs.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// mainMenuStrip
@@ -125,7 +123,6 @@
 			// 
 			// shellTabs
 			// 
-			this.shellTabs.Controls.Add(this.tabPage1);
 			this.shellTabs.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.shellTabs.Location = new System.Drawing.Point(0, 49);
 			this.shellTabs.Margin = new System.Windows.Forms.Padding(0);
@@ -134,17 +131,7 @@
 			this.shellTabs.Size = new System.Drawing.Size(670, 330);
 			this.shellTabs.TabIndex = 3;
 			this.shellTabs.TabStop = false;
-			// 
-			// tabPage1
-			// 
-			this.tabPage1.BackColor = System.Drawing.Color.Black;
-			this.tabPage1.ForeColor = System.Drawing.Color.White;
-			this.tabPage1.Location = new System.Drawing.Point(4, 22);
-			this.tabPage1.Margin = new System.Windows.Forms.Padding(0);
-			this.tabPage1.Name = "tabPage1";
-			this.tabPage1.Size = new System.Drawing.Size(662, 304);
-			this.tabPage1.TabIndex = 0;
-			this.tabPage1.Text = "tabPage1";
+			this.shellTabs.MouseClick += new System.Windows.Forms.MouseEventHandler(this.shellTabs_MouseClick);
 			// 
 			// MasterForm
 			// 
@@ -168,7 +155,6 @@
 			globalStatusBar.PerformLayout();
 			this.shellBar.ResumeLayout(false);
 			this.shellBar.PerformLayout();
-			this.shellTabs.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -181,7 +167,6 @@
 		private System.Windows.Forms.TabControl shellTabs;
 		private System.Windows.Forms.ToolStripButton toolStripButton1;
 		private System.Windows.Forms.ToolStripProgressBar globalProgressBar;
-		private System.Windows.Forms.TabPage tabPage1;
 		private System.Windows.Forms.ToolStripMenuItem teststdinToolStripMenuItem;
 		private System.Windows.Forms.ToolStripStatusLabel globalStatus;
 	}

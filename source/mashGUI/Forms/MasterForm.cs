@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace mash.gui
 {
@@ -17,30 +18,39 @@ namespace mash.gui
 
 		public string InputBuffer { get; set; }
 
+		public ShellView ActiveShellView
+		{
+			get
+			{
+				var page = shellTabs.SelectedTab as ShellTabPage;
+				if (page == null)
+				{
+					//TODO: throw exception.
+				}
+				return page.ShellView;
+			}
+		}
+
 		public MasterForm()
 		{
 			InitializeComponent();
 			_currentKey = '\0';
 			_characterKey = false;
+
+			addShell("shell");
 		}
 
 		private TabPage addShell(string name)
 		{
-			var page = new TabPage(name);
-			page.Margin = Padding.Empty;
-			page.Padding = Padding.Empty;
-			page.BackColor = Color.Black;
+			var page = new ShellTabPage(name);
 
-			var shell = new ShellView();
-
-			page.Controls.Add(shell);
 			shellTabs.TabPages.Add(page);
 			return page;
 		}
 
 		private void toolStripButton1_Click(object sender, EventArgs e)
 		{
-			shellTabs.SelectedTab = addShell("cmd");
+			shellTabs.SelectedTab = addShell("shell");
 		}
 
 		private void teststdinToolStripMenuItem_Click(object sender, EventArgs e)
@@ -58,20 +68,41 @@ namespace mash.gui
 		{
 			// Raised by all keyboard keys
 
-			if (_characterKey && (char)e.KeyValue == _currentKey)
-			{
-				globalStatus.Text = string.Format("{0}", _currentKey);
-			}
+			//ActiveShellView.onKeyDown(sender, e);
+			//e.Handled = true;
 		}
 
 		private void MasterForm_KeyPress(object sender, KeyPressEventArgs e)
 		{
 			// Only raised by character-keys (keys that have a proper string representation)
 
-			_characterKey = true;
-			_currentKey = e.KeyChar;
+			//ActiveShellView.onKeyPress(sender, e);
+			//e.Handled = true;
+		}
 
-			e.Handled = true;
+		private void shellTabs_MouseClick(object sender, MouseEventArgs e)
+		{
+			if (e.Button == MouseButtons.Middle)
+			{
+				Debug.Assert(shellTabs.TabCount == shellTabs.TabPages.Count);
+				if (shellTabs.TabCount > 1)
+				{
+					var selected = shellTabs.SelectedTab;
+					int selectedIndex = shellTabs.SelectedIndex;
+
+					if (selectedIndex == shellTabs.TabCount - 1)
+					{
+						selectedIndex -= 1;
+					}
+
+					shellTabs.TabPages.Remove(selected);
+					shellTabs.SelectedIndex = selectedIndex;
+				}
+				else
+				{
+					MessageBox.Show("Cannot close last tab.");
+				}
+			}
 		}
 	}
 }

@@ -12,8 +12,7 @@ namespace mash.gui
 {
 	public partial class ShellView : UserControl
 	{
-		private Keys _currentKey = 0;
-		private int _counter = 0;
+		string _onEnter = string.Format("{0}{1}$ ", Environment.CurrentDirectory, Environment.NewLine);
 
 		public ShellView()
 		{
@@ -22,6 +21,17 @@ namespace mash.gui
 			Dock = DockStyle.Fill;
 			Padding = Padding.Empty;
 			Margin = Padding.Empty;
+
+			console.Text = _onEnter;
+		}
+
+		private void input_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyData == Keys.Enter)
+			{
+				console.Text += string.Format("{0}{1}{2}", input.Text, Environment.NewLine, _onEnter);
+				input.Text = string.Empty;
+			}
 		}
 	}
 }
