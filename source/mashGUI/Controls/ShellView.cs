@@ -12,6 +12,9 @@ namespace mash.gui
 {
 	public partial class ShellView : UserControl
 	{
+		private Keys _currentKey = 0;
+		private int _counter = 0;
+
 		public ShellView()
 		{
 			InitializeComponent();

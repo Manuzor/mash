@@ -161,6 +161,7 @@
 			this.Name = "MasterForm";
 			this.Text = global::mash.gui.Properties.Settings.Default.MasterFormTitle;
 			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MasterForm_KeyDown);
+			this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MasterForm_KeyPress);
 			mainMenuStrip.ResumeLayout(false);
 			mainMenuStrip.PerformLayout();
 			globalStatusBar.ResumeLayout(false);

@@ -12,16 +12,16 @@ namespace mash.gui
 {
 	public partial class MasterForm : Form
 	{
-		private Keys _currentKey;
-		private int _counter;
+		private char _currentKey;
+		private bool _characterKey;
 
 		public string InputBuffer { get; set; }
 
 		public MasterForm()
 		{
 			InitializeComponent();
-			_currentKey = Keys.None;
-			_counter = 0;
+			_currentKey = '\0';
+			_characterKey = false;
 		}
 
 		private TabPage addShell(string name)
@@ -56,13 +56,20 @@ namespace mash.gui
 
 		private void MasterForm_KeyDown(object sender, KeyEventArgs e)
 		{
-			if (_currentKey != e.KeyData)
+			// Raised by all keyboard keys
+
+			if (_characterKey && (char)e.KeyValue == _currentKey)
 			{
-				_currentKey = e.KeyData;
-				_counter = 0;
+				globalStatus.Text = string.Format("{0}", _currentKey);
 			}
-			globalStatus.Text = string.Format("{0}: {1} ({2})", e.Modifiers, e.KeyData, _counter);
-			++_counter;
+		}
+
+		private void MasterForm_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			// Only raised by character-keys (keys that have a proper string representation)
+
+			_characterKey = true;
+			_currentKey = e.KeyChar;
 
 			e.Handled = true;
 		}
