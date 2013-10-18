@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 
 namespace mash.exceptions
 {
@@ -16,11 +12,19 @@ namespace mash.exceptions
 		public Base(string message)
 			: base(message)
 		{
+			logMessage(message);
 		}
 
 		public Base(string message, System.Exception inner)
 			: base(message, inner)
 		{
+			logMessage(message);
+		}
+
+		[Conditional("DEBUG")]
+		protected virtual void logMessage(string message)
+		{
+			logging.Manager.Instance.logMessage(message, logging.MessageLevel.Warning);
 		}
 	}
 }

@@ -6,17 +6,26 @@ using System.Threading.Tasks;
 
 namespace mash.logging
 {
-	public delegate void MessageDelegate(string message, MessageLevel level);
+	public delegate void MessageDelegate(string message, MessageLevel level = MessageLevel.Normal);
 
 	public class Manager
 	{
-		public event MessageDelegate onLogMessage;
+		#region Static
+		public static Manager Instance { get; protected set; }
 
-		public void logMessage(string message, MessageLevel level)
+		static Manager()
 		{
-			if (onLogMessage != null)
+			Instance = new Manager();
+		}
+		#endregion
+
+		public event MessageDelegate OnLogMessage;
+
+		public virtual void logMessage(string message, MessageLevel level = MessageLevel.Normal)
+		{
+			if (OnLogMessage != null)
 			{
-				onLogMessage(message, level);
+				OnLogMessage(message, level);
 			}
 		}
 	}

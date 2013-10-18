@@ -2,6 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mashCore", "mashCore\mashCore.csproj", "{C18783FB-440D-45C7-8757-2C7C9595ABAF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{56A5C763-05C5-4894-9CFC-7E17D102BB33} = {56A5C763-05C5-4894-9CFC-7E17D102BB33}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mashGUI", "mashGUI\mashGUI.csproj", "{F607B084-3876-4523-ABC7-4EECD5DBA0B1}"
 EndProject

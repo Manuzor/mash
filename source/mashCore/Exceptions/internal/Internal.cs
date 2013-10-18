@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace mash.exceptions
+﻿namespace mash.exceptions
 {
 	public class Internal : Base
 	{
@@ -21,6 +15,11 @@ namespace mash.exceptions
 		public Internal(string message, System.Exception inner)
 			: base(message, inner)
 		{
+		}
+
+		protected override void logMessage(string message)
+		{
+			logging.Manager.Instance.logMessage(message, logging.MessageLevel.Critical);
 		}
 	}
 }
