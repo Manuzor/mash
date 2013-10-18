@@ -1,18 +1,18 @@
 ﻿namespace mash.Exceptions.Internal
 {
-	public class Internal : Base
+	public class Base : Exceptions.Base
 	{
-		public Internal()
+		public Base()
 			: base()
 		{
 		}
 
-		public Internal(string message)
+		public Base(string message)
 			: base(message)
 		{
 		}
 
-		public Internal(string message, System.Exception inner)
+		public Base(string message, System.Exception inner)
 			: base(message, inner)
 		{
 		}
