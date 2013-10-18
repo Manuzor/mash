@@ -1,4 +1,4 @@
-﻿namespace mash.exceptions
+﻿namespace mash.Exceptions
 {
 	public class InvalidArgument : Base
 	{

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 
-namespace mash.logging
+namespace mash.Logging
 {
 	public class TargetStandardOutput : ITarget
 	{

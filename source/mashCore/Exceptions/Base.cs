@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace mash.exceptions
+namespace mash.Exceptions
 {
 	public class Base : System.Exception
 	{
@@ -24,7 +24,7 @@ namespace mash.exceptions
 		[Conditional("DEBUG")]
 		protected virtual void logMessage(string message)
 		{
-			logging.Manager.Instance.logMessage(message, logging.MessageLevel.Warning);
+			Logging.Manager.Instance.logMessage(message, Logging.MessageLevel.Warning);
 		}
 	}
 }

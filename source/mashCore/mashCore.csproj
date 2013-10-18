@@ -41,9 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="exceptions\Base.cs" />
-    <Compile Include="exceptions\internal\Internal.cs" />
-    <Compile Include="exceptions\InvalidArgument.cs" />
+    <Compile Include="Exceptions\Base.cs" />
+    <Compile Include="Exceptions\Internal\Internal.cs" />
+    <Compile Include="Exceptions\InvalidArgument.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

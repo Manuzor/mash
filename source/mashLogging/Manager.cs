@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace mash.logging
+namespace mash.Logging
 {
 	public delegate void MessageDelegate(string message, MessageLevel level = MessageLevel.Normal);
 

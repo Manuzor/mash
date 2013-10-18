@@ -1,4 +1,4 @@
-﻿namespace mash.exceptions
+﻿namespace mash.Exceptions.Internal
 {
 	public class Internal : Base
 	{
@@ -19,7 +19,7 @@
 
 		protected override void logMessage(string message)
 		{
-			logging.Manager.Instance.logMessage(message, logging.MessageLevel.Critical);
+			Logging.Manager.Instance.logMessage(message, Logging.MessageLevel.Critical);
 		}
 	}
 }

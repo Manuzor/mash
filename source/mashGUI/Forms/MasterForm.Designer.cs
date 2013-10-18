@@ -1,4 +1,4 @@
-﻿namespace mash.gui
+﻿namespace mash.Gui
 {
 	partial class MasterForm
 	{
@@ -87,7 +87,7 @@
 			// 
 			this.globalStatus.Name = "globalStatus";
 			this.globalStatus.Size = new System.Drawing.Size(42, 18);
-			this.globalStatus.Text = global::mash.gui.Properties.Settings.Default.GlobalStatusLine;
+			this.globalStatus.Text = global::mash.Gui.Properties.Settings.Default.GlobalStatusLine;
 			// 
 			// toolStripStatusLabel1
 			// 
@@ -99,7 +99,7 @@
 			// 
 			this.globalProgressBar.Name = "globalProgressBar";
 			this.globalProgressBar.Size = new System.Drawing.Size(118, 17);
-			this.globalProgressBar.Value = global::mash.gui.Properties.Settings.Default.StatusProgress;
+			this.globalProgressBar.Value = global::mash.Gui.Properties.Settings.Default.StatusProgress;
 			// 
 			// shellBar
 			// 
@@ -142,11 +142,11 @@
 			this.Controls.Add(this.shellBar);
 			this.Controls.Add(globalStatusBar);
 			this.Controls.Add(mainMenuStrip);
-			this.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::mash.gui.Properties.Settings.Default, "MasterFormTitle", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::mash.Gui.Properties.Settings.Default, "MasterFormTitle", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.KeyPreview = true;
 			this.MainMenuStrip = mainMenuStrip;
 			this.Name = "MasterForm";
-			this.Text = global::mash.gui.Properties.Settings.Default.MasterFormTitle;
+			this.Text = global::mash.Gui.Properties.Settings.Default.MasterFormTitle;
 			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MasterForm_KeyDown);
 			this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MasterForm_KeyPress);
 			mainMenuStrip.ResumeLayout(false);
