@@ -113,12 +113,14 @@ namespace mash.Gui.Forms
 
 		private void showLogWindowToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			LogWindow.Show();
-		}
-
-		private void makeLogEntryToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			Logging.Manager.Instance.logMessage("This is a log message! yay!" + Environment.NewLine);
+			if (LogWindow.Visible)
+			{
+				LogWindow.Hide();
+			}
+			else
+			{
+				LogWindow.Show();
+			}
 		}
 	}
 }

@@ -50,8 +50,10 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(453, 353);
 			this.Controls.Add(this.logTextBox);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
 			this.Name = "LogWindow";
 			this.Text = "Log";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LogWindow_FormClosing);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

@@ -16,5 +16,11 @@ namespace mash.Gui.Forms
 		{
 			InitializeComponent();
 		}
+
+		private void LogWindow_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			Hide();
+			e.Cancel = true;
+		}
 	}
 }
