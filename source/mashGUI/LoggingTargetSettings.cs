@@ -7,14 +7,14 @@ using mash.Gui.Properties;
 
 namespace mash.Logging.Target
 {
-	public class LoggingTargetSettings :
+	public class Settings :
 		IBase
 	{
 
 		public void logMessage(string message, MessageLevel level = MessageLevel.Normal)
 		{
 			message = string.Format("{0}: {1}", DateTime.Now, message);
-			Settings.Default.GlobalLog += message;
+			mash.Gui.Properties.Settings.Default.GlobalLog += message;
 		}
 
 		public void Dispose()
