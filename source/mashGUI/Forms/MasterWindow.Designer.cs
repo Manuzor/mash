@@ -30,11 +30,10 @@
 		{
 			System.Windows.Forms.MenuStrip mainMenuStrip;
 			System.Windows.Forms.StatusStrip globalStatusBar;
-			mash.Gui.Properties.Settings settings = new mash.Gui.Properties.Settings();
+			mash.Gui.Properties.Settings settings1 = new mash.Gui.Properties.Settings();
 			System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MasterWindow));
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.teststdinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.debugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.showLogWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.globalStatus = new System.Windows.Forms.ToolStripStatusLabel();
@@ -54,7 +53,6 @@
 			// 
 			mainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.teststdinToolStripMenuItem,
             this.debugToolStripMenuItem});
 			mainMenuStrip.Location = new System.Drawing.Point(0, 0);
 			mainMenuStrip.Name = "mainMenuStrip";
@@ -67,13 +65,6 @@
 			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
 			this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
 			this.fileToolStripMenuItem.Text = "File";
-			// 
-			// teststdinToolStripMenuItem
-			// 
-			this.teststdinToolStripMenuItem.Name = "teststdinToolStripMenuItem";
-			this.teststdinToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
-			this.teststdinToolStripMenuItem.Text = "test_stdin";
-			this.teststdinToolStripMenuItem.Click += new System.EventHandler(this.teststdinToolStripMenuItem_Click);
 			// 
 			// debugToolStripMenuItem
 			// 
@@ -106,12 +97,12 @@
 			// 
 			this.globalStatus.Name = "globalStatus";
 			this.globalStatus.Size = new System.Drawing.Size(42, 18);
-			settings.GlobalLog = "";
-			settings.GlobalStatusLine = "Ready.";
-			settings.MasterFormTitle = "Mash";
-			settings.SettingsKey = "";
-			settings.StatusProgress = 0;
-			this.globalStatus.Text = settings.GlobalStatusLine;
+			settings1.GlobalLog = "";
+			settings1.GlobalStatusLine = "Ready.";
+			settings1.MasterFormTitle = "Mash";
+			settings1.SettingsKey = "";
+			settings1.StatusProgress = 0;
+			this.globalStatus.Text = settings1.GlobalStatusLine;
 			// 
 			// toolStripStatusLabel1
 			// 
@@ -123,7 +114,7 @@
 			// 
 			this.globalProgressBar.Name = "globalProgressBar";
 			this.globalProgressBar.Size = new System.Drawing.Size(118, 17);
-			this.globalProgressBar.Value = settings.StatusProgress;
+			this.globalProgressBar.Value = settings1.StatusProgress;
 			// 
 			// shellBar
 			// 
@@ -166,11 +157,11 @@
 			this.Controls.Add(this.shellBar);
 			this.Controls.Add(globalStatusBar);
 			this.Controls.Add(mainMenuStrip);
-			this.DataBindings.Add(new System.Windows.Forms.Binding("Text", settings, "MasterFormTitle", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.DataBindings.Add(new System.Windows.Forms.Binding("Text", settings1, "MasterFormTitle", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.KeyPreview = true;
 			this.MainMenuStrip = mainMenuStrip;
 			this.Name = "MasterWindow";
-			this.Text = settings.MasterFormTitle;
+			this.Text = settings1.MasterFormTitle;
 			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MasterForm_KeyDown);
 			this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MasterForm_KeyPress);
 			mainMenuStrip.ResumeLayout(false);
@@ -191,7 +182,6 @@
 		private System.Windows.Forms.TabControl shellTabs;
 		private System.Windows.Forms.ToolStripButton toolStripButton1;
 		private System.Windows.Forms.ToolStripProgressBar globalProgressBar;
-		private System.Windows.Forms.ToolStripMenuItem teststdinToolStripMenuItem;
 		private System.Windows.Forms.ToolStripStatusLabel globalStatus;
 		private System.Windows.Forms.ToolStripMenuItem debugToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem showLogWindowToolStripMenuItem;

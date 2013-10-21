@@ -59,17 +59,6 @@ namespace mash.Gui.Forms
 			shellTabs.SelectedTab = addShell("shell");
 		}
 
-		private void teststdinToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			var result = MessageBox.Show("Click OK.", "", MessageBoxButtons.OKCancel);
-			if (result == DialogResult.Cancel)
-			{
-				return;
-			}
-
-			string stdin = Console.In.ReadToEnd();
-		}
-
 		private void MasterForm_KeyDown(object sender, KeyEventArgs e)
 		{
 			// Raised by all keyboard keys
