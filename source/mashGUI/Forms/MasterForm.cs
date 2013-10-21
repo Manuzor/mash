@@ -104,5 +104,10 @@ namespace mash.Gui
 				}
 			}
 		}
+
+		private void showLogWindowToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

@@ -53,6 +53,12 @@
     <Compile Include="Controls\ShellView.Designer.cs">
       <DependentUpon>ShellView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\LogWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LogWindow.Designer.cs">
+      <DependentUpon>LogWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MasterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +69,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Controls\ShellView.resx">
       <DependentUpon>ShellView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LogWindow.resx">
+      <DependentUpon>LogWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MasterForm.resx">
       <DependentUpon>MasterForm.cs</DependentUpon>
@@ -89,6 +98,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\mashCore\mashCore.csproj">
+      <Project>{c18783fb-440d-45c7-8757-2c7c9595abaf}</Project>
+      <Name>mashCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\mashLogging\mashLogging.csproj">
+      <Project>{56a5c763-05c5-4894-9cfc-7e17d102bb33}</Project>
+      <Name>mashLogging</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

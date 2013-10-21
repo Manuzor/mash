@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace mash.Gui.Properties {
+namespace mash.gui.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -56,6 +56,18 @@ namespace mash.Gui.Properties {
             }
             set {
                 this["StatusProgress"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string GlobalLog {
+            get {
+                return ((string)(this["GlobalLog"]));
+            }
+            set {
+                this["GlobalLog"] = value;
             }
         }
     }
