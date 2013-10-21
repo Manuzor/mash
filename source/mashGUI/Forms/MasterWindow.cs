@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 
-namespace mash.Gui
+namespace mash.Gui.Forms
 {
-	public partial class MasterForm : Form
+	public partial class MasterWindow : Form
 	{
 		private char _currentKey;
 		private bool _characterKey;
@@ -31,7 +31,7 @@ namespace mash.Gui
 			}
 		}
 
-		public MasterForm()
+		public MasterWindow()
 		{
 			InitializeComponent();
 			_currentKey = '\0';

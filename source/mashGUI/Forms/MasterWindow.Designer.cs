@@ -1,6 +1,6 @@
-﻿namespace mash.Gui
+﻿namespace mash.Gui.Forms
 {
-	partial class MasterForm
+	partial class MasterWindow
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -32,7 +32,7 @@
 			System.Windows.Forms.StatusStrip globalStatusBar;
 			mash.Gui.Properties.Settings settings1 = new mash.Gui.Properties.Settings();
 			System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MasterForm));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MasterWindow));
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.teststdinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.globalStatus = new System.Windows.Forms.ToolStripStatusLabel();

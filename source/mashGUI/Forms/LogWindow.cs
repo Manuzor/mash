@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace mash.gui.Forms
+namespace mash.Gui.Forms
 {
 	public partial class LogWindow : Form
 	{
