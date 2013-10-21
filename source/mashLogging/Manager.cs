@@ -22,11 +22,11 @@ namespace mash.Logging
 		public event MessageDelegate OnMessageLogging;
 		public event MessageDelegate OnMessageLogged;
 
-		public IList<ITarget> Targets { get; set; }
+		public IList<Target.IBase> Targets { get; set; }
 
 		public Manager()
 		{
-			Targets = new List<ITarget>();
+			Targets = new List<Target.IBase>();
 		}
 
 		public virtual void logMessage(string message, MessageLevel level = MessageLevel.Normal)

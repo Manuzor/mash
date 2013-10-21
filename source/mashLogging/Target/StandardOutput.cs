@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 
-namespace mash.Logging
+namespace mash.Logging.Target
 {
-	public class TargetStandardOutput : ITarget
+	public class StandardOutput : IBase
 	{
 		#region Inner classes
 		public class ColorSchemeDefault : Dictionary<MessageLevel, ConsoleColor>
@@ -28,12 +28,12 @@ namespace mash.Logging
 
 		public IDictionary<MessageLevel, ConsoleColor> ColorScheme { get; set; }
 
-		public TargetStandardOutput()
+		public StandardOutput()
 		{
 			ColorScheme = new Dictionary<MessageLevel, ConsoleColor>();
 		}
 
-		public TargetStandardOutput(IDictionary<MessageLevel, ConsoleColor> colorScheme)
+		public StandardOutput(IDictionary<MessageLevel, ConsoleColor> colorScheme)
 		{
 			if (colorScheme == null)
 			{

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace mash.Logging
+namespace mash.Logging.Target
 {
-	public interface ITarget : System.IDisposable
+	public interface IBase : System.IDisposable
 	{
 		void logMessage(string message, MessageLevel level = MessageLevel.Normal);
 	}

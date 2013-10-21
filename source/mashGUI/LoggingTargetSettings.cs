@@ -5,9 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using mash.Gui.Properties;
 
-namespace mash.Logging
+namespace mash.Logging.Target
 {
-	public class LoggingTargetSettings : ITarget
+	public class LoggingTargetSettings :
+		IBase
 	{
 
 		public void logMessage(string message, MessageLevel level = MessageLevel.Normal)

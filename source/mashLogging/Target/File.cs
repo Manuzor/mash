@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using System.IO;
 
-namespace mash.Logging
+namespace mash.Logging.Target
 {
-	public class TargetFile : ITarget
+	public class File : IBase
 	{
 		protected StreamWriter _fileStream;
 		public string FileName { get; set; }
 
-		public TargetFile()
+		public File()
 		{
 		}
 
-		public TargetFile(string filename, bool tryToCreateIfNotExists = true)
+		public File(string filename, bool tryToCreateIfNotExists = true)
 		{
 			var fi = new FileInfo(filename);
 			if (tryToCreateIfNotExists)
