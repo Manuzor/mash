@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace mash.Logging
 {
-	public interface ITarget
+	public interface ITarget : System.IDisposable
 	{
 		void logMessage(string message, MessageLevel level = MessageLevel.Normal);
 	}

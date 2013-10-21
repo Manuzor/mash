@@ -60,5 +60,10 @@ namespace mash.Logging
 				Console.WriteLine(message);
 			}
 		}
+
+		public void Dispose()
+		{
+			// Nothing to do here.
+		}
 	}
 }
