@@ -1,4 +1,4 @@
-﻿namespace mash.Gui
+﻿namespace mash.Gui.Controls
 {
 	partial class ShellView
 	{

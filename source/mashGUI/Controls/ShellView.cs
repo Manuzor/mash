@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace mash.Gui
+namespace mash.Gui.Controls
 {
 	public partial class ShellView : UserControl
 	{

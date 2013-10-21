@@ -18,11 +18,11 @@ namespace mash.Gui.Forms
 
 		public string InputBuffer { get; set; }
 
-		public ShellView ActiveShellView
+		public Controls.ShellView ActiveShellView
 		{
 			get
 			{
-				var page = shellTabs.SelectedTab as ShellTabPage;
+				var page = shellTabs.SelectedTab as Controls.ShellTabPage;
 				if (page == null)
 				{
 					//TODO: throw exception.
@@ -42,7 +42,7 @@ namespace mash.Gui.Forms
 
 		private TabPage addShell(string name)
 		{
-			var page = new ShellTabPage(name);
+			var page = new Controls.ShellTabPage(name);
 
 			shellTabs.TabPages.Add(page);
 			return page;
