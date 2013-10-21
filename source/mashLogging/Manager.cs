@@ -19,13 +19,31 @@ namespace mash.Logging
 		}
 		#endregion
 
-		public event MessageDelegate OnLogMessage;
+		public event MessageDelegate OnMessageLogging;
+		public event MessageDelegate OnMessageLogged;
+
+		public IList<ITarget> Targets { get; set; }
+
+		public Manager()
+		{
+			Targets = new List<ITarget>();
+		}
 
 		public virtual void logMessage(string message, MessageLevel level = MessageLevel.Normal)
 		{
-			if (OnLogMessage != null)
+			if (OnMessageLogging != null)
 			{
-				OnLogMessage(message, level);
+				OnMessageLogging(message, level);
+			}
+
+			foreach (var target in Targets)
+			{
+				target.logMessage(message, level);
+			}
+
+			if (OnMessageLogged != null)
+			{
+				OnMessageLogged(message, level);
 			}
 		}
 	}
