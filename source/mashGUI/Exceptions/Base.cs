@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace mash.Gui.Exceptions
 {
 	public class Base :
-		mash.Exceptions.Base
+		mash.Core.Exceptions.Base
 	{
 		public Base()
 			: base()

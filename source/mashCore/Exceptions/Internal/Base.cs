@@ -1,4 +1,4 @@
-﻿namespace mash.Exceptions.Internal
+﻿namespace mash.Core.Exceptions.Internal
 {
 	public class Base : Exceptions.Base
 	{

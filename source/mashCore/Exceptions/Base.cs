@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace mash.Exceptions
+namespace mash.Core.Exceptions
 {
 	public class Base : System.Exception
 	{
