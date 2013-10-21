@@ -53,6 +53,9 @@
     <Compile Include="Controls\ShellView.Designer.cs">
       <DependentUpon>ShellView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Exceptions\Base.cs" />
+    <Compile Include="Exceptions\Internal\Base.cs" />
+    <Compile Include="Exceptions\Internal\InvalidControl.cs" />
     <Compile Include="Forms\LogWindow.cs">
       <SubType>Form</SubType>
     </Compile>

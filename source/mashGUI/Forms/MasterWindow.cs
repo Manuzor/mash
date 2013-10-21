@@ -25,7 +25,7 @@ namespace mash.Gui.Forms
 				var page = shellTabs.SelectedTab as Controls.ShellTabPage;
 				if (page == null)
 				{
-					//TODO: throw exception.
+					new Exceptions.Internal.Base("");
 				}
 				return page.ShellView;
 			}
