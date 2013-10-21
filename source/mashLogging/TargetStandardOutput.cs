@@ -47,7 +47,7 @@ namespace mash.Logging
 
 		public void logMessage(string message, MessageLevel level = MessageLevel.Normal)
 		{
-			Console.WriteLine(message);
+			message = string.Format("{0}: {1}", DateTime.Now, message);
 			if (ColorScheme.ContainsKey(level))
 			{
 				var bak = Console.ForegroundColor;
