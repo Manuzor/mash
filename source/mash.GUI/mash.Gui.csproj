@@ -104,13 +104,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\mashCore\mashCore.csproj">
+    <ProjectReference Include="..\mash.Core\mash.Core.csproj">
       <Project>{c18783fb-440d-45c7-8757-2c7c9595abaf}</Project>
-      <Name>mashCore</Name>
+      <Name>mash.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\mashLogging\mashLogging.csproj">
+    <ProjectReference Include="..\mash.Logging\mash.Logging.csproj">
       <Project>{56a5c763-05c5-4894-9cfc-7e17d102bb33}</Project>
-      <Name>mashLogging</Name>
+      <Name>mash.Logging</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
