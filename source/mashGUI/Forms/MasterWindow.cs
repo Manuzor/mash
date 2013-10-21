@@ -17,6 +17,7 @@ namespace mash.Gui.Forms
 		private char _currentKey;
 		private bool _characterKey;
 
+		public LogWindow LogWindow { get; set; }
 		public string InputBuffer { get; set; }
 
 		public Controls.ShellView ActiveShellView
@@ -41,6 +42,8 @@ namespace mash.Gui.Forms
 			_characterKey = false;
 
 			addShell("shell");
+
+			LogWindow = new LogWindow();
 		}
 
 		private TabPage addShell(string name)
@@ -110,7 +113,12 @@ namespace mash.Gui.Forms
 
 		private void showLogWindowToolStripMenuItem_Click(object sender, EventArgs e)
 		{
+			LogWindow.Show();
+		}
 
+		private void makeLogEntryToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Logging.Manager.Instance.logMessage("This is a log message! yay!" + Environment.NewLine);
 		}
 	}
 }

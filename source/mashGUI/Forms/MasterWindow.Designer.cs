@@ -35,13 +35,14 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MasterWindow));
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.teststdinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.debugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.showLogWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.makeLogEntryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.globalStatus = new System.Windows.Forms.ToolStripStatusLabel();
 			this.globalProgressBar = new System.Windows.Forms.ToolStripProgressBar();
 			this.shellBar = new System.Windows.Forms.ToolStrip();
 			this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
 			this.shellTabs = new System.Windows.Forms.TabControl();
-			this.debugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.showLogWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			mainMenuStrip = new System.Windows.Forms.MenuStrip();
 			globalStatusBar = new System.Windows.Forms.StatusStrip();
 			toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -75,6 +76,29 @@
 			this.teststdinToolStripMenuItem.Text = "test_stdin";
 			this.teststdinToolStripMenuItem.Click += new System.EventHandler(this.teststdinToolStripMenuItem_Click);
 			// 
+			// debugToolStripMenuItem
+			// 
+			this.debugToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showLogWindowToolStripMenuItem,
+            this.makeLogEntryToolStripMenuItem});
+			this.debugToolStripMenuItem.Name = "debugToolStripMenuItem";
+			this.debugToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+			this.debugToolStripMenuItem.Text = "Debug";
+			// 
+			// showLogWindowToolStripMenuItem
+			// 
+			this.showLogWindowToolStripMenuItem.Name = "showLogWindowToolStripMenuItem";
+			this.showLogWindowToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+			this.showLogWindowToolStripMenuItem.Text = "Show Log Window";
+			this.showLogWindowToolStripMenuItem.Click += new System.EventHandler(this.showLogWindowToolStripMenuItem_Click);
+			// 
+			// makeLogEntryToolStripMenuItem
+			// 
+			this.makeLogEntryToolStripMenuItem.Name = "makeLogEntryToolStripMenuItem";
+			this.makeLogEntryToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+			this.makeLogEntryToolStripMenuItem.Text = "Make log entry";
+			this.makeLogEntryToolStripMenuItem.Click += new System.EventHandler(this.makeLogEntryToolStripMenuItem_Click);
+			// 
 			// globalStatusBar
 			// 
 			globalStatusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -91,6 +115,7 @@
 			// 
 			this.globalStatus.Name = "globalStatus";
 			this.globalStatus.Size = new System.Drawing.Size(42, 18);
+			settings1.GlobalLog = "";
 			settings1.GlobalStatusLine = "Ready.";
 			settings1.MasterFormTitle = "Mash";
 			settings1.SettingsKey = "";
@@ -141,22 +166,7 @@
 			this.shellTabs.TabStop = false;
 			this.shellTabs.MouseClick += new System.Windows.Forms.MouseEventHandler(this.shellTabs_MouseClick);
 			// 
-			// debugToolStripMenuItem
-			// 
-			this.debugToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.showLogWindowToolStripMenuItem});
-			this.debugToolStripMenuItem.Name = "debugToolStripMenuItem";
-			this.debugToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
-			this.debugToolStripMenuItem.Text = "Debug";
-			// 
-			// showLogWindowToolStripMenuItem
-			// 
-			this.showLogWindowToolStripMenuItem.Name = "showLogWindowToolStripMenuItem";
-			this.showLogWindowToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
-			this.showLogWindowToolStripMenuItem.Text = "Show Log Window";
-			this.showLogWindowToolStripMenuItem.Click += new System.EventHandler(this.showLogWindowToolStripMenuItem_Click);
-			// 
-			// MasterForm
+			// MasterWindow
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -168,7 +178,7 @@
 			this.DataBindings.Add(new System.Windows.Forms.Binding("Text", settings1, "MasterFormTitle", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.KeyPreview = true;
 			this.MainMenuStrip = mainMenuStrip;
-			this.Name = "MasterForm";
+			this.Name = "MasterWindow";
 			this.Text = settings1.MasterFormTitle;
 			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MasterForm_KeyDown);
 			this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MasterForm_KeyPress);
@@ -194,5 +204,6 @@
 		private System.Windows.Forms.ToolStripStatusLabel globalStatus;
 		private System.Windows.Forms.ToolStripMenuItem debugToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem showLogWindowToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem makeLogEntryToolStripMenuItem;
 	}
 }
