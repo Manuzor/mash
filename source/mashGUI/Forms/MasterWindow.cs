@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using mash.Gui;
 
 namespace mash.Gui.Forms
 {
@@ -25,7 +26,9 @@ namespace mash.Gui.Forms
 				var page = shellTabs.SelectedTab as Controls.ShellTabPage;
 				if (page == null)
 				{
-					new Exceptions.Internal.Base("");
+					new Exceptions.Internal.InvalidControl(string.Format(
+						"Expected Controls.ShellTabPage, got {0}",
+						shellTabs.SelectedTab.GetType()));
 				}
 				return page.ShellView;
 			}
