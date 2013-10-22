@@ -46,6 +46,7 @@
     <Compile Include="MessageLevel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Manager.cs" />
+    <Compile Include="Target\File.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\mash.Logging\mash.Logging.csproj">
