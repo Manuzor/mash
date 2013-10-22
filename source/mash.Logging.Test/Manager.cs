@@ -17,15 +17,34 @@ namespace mash.Logging.Test
 
 	class TestTarget : Logging.Target.IBase
 	{
+		public string LastLoggedMessage { get; set; }
+		public MessageLevel LastLoggedMessageLevel { get; set; }
+		public bool MessageLogged { get; set; }
+		public bool Disposed { get; set; }
+
+		public TestTarget()
+		{
+			reset();
+		}
 
 		public void logMessage(string message, MessageLevel level = MessageLevel.Normal)
 		{
-			throw new SuccessException();
+			LastLoggedMessage = message;
+			LastLoggedMessageLevel = level;
+			MessageLogged = true;
 		}
 
 		public void Dispose()
 		{
-			throw new SuccessException();
+			Disposed = true;
+		}
+
+		public void reset()
+		{
+			LastLoggedMessage = null;
+			LastLoggedMessageLevel = MessageLevel.None;
+			MessageLogged = false;
+			Disposed = false;
 		}
 	}
 
@@ -43,11 +62,68 @@ namespace mash.Logging.Test
 		}
 
 		[TestCase]
-		public void test002_LogMessage()
+		public void test001_AddingTargets()
 		{
 			var manager = new Logging.Manager();
-			manager.Targets.Add(new TestTarget());
-			Assert.Throws<SuccessException>(delegate() { manager.logMessage("Some message."); });
+			var target = new TestTarget();
+
+			Assert.False(target.MessageLogged);
+			Assert.False(target.Disposed);
+			Assert.AreEqual(target.LastLoggedMessageLevel, MessageLevel.None);
+
+			Assert.AreEqual(manager.Targets.Count, 0);
+
+			manager.Targets.Add(target);
+			Assert.AreEqual(manager.Targets.Count, 1);
+		}
+
+		[TestCase]
+		public void test001_RemovingTargets()
+		{
+			var manager = new Logging.Manager();
+			var target = new TestTarget();
+
+			Assert.False(target.MessageLogged);
+			Assert.False(target.Disposed);
+			Assert.AreEqual(target.LastLoggedMessageLevel, MessageLevel.None);
+
+			Assert.AreEqual(manager.Targets.Count, 0);
+
+			manager.Targets.Add(target);
+			Assert.AreEqual(manager.Targets.Count, 1);
+
+			manager.Targets.Remove(target);
+			Assert.AreEqual(manager.Targets.Count, 0);
+		}
+
+		[TestCase]
+		public void test010_LogMessage()
+		{
+			var manager = new Logging.Manager();
+			var target = new TestTarget();
+			manager.Targets.Add(target);
+
+			Assert.False(target.Disposed);
+			Assert.False(target.MessageLogged);
+			Assert.Null(target.LastLoggedMessage);
+			Assert.AreEqual(target.LastLoggedMessageLevel, MessageLevel.None);
+
+			// Log a message
+			manager.logMessage("Hello");
+			Assert.True(target.MessageLogged, "logMessage was not called!");
+			Assert.AreEqual(target.LastLoggedMessage, "Hello");
+			Assert.AreEqual(target.LastLoggedMessageLevel, MessageLevel.Normal);
+
+			// Reset the target
+			target.reset();
+			Assert.False(target.MessageLogged);
+			Assert.Null(target.LastLoggedMessage);
+			Assert.AreEqual(target.LastLoggedMessageLevel, MessageLevel.None);
+
+			manager.logMessage("World", MessageLevel.Critical);
+			Assert.True(target.MessageLogged, "logMessage was not called!");
+			Assert.AreEqual(target.LastLoggedMessage, "World");
+			Assert.AreEqual(target.LastLoggedMessageLevel, MessageLevel.Critical);
 		}
 	}
 }

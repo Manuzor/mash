@@ -1,6 +1,6 @@
 ﻿<NUnitProject>
   <Settings activeconfig="Release" />
-  <Config name="Debug" binpathtype="Auto" />
+  <Config name="Debug" binpathtype="Auto" runtimeFramework="v4.0" />
   <Config name="Release" binpathtype="Auto">
     <assembly path="..\binary\mash.Logging.Test\bin\mash.Logging.Test.dll" />
   </Config>
