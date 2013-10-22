@@ -15,7 +15,7 @@ namespace mash.Logging.Target
 
 		static File()
 		{
-			string programName = Assembly.GetExecutingAssembly().FullName;
+			string programName = AppDomain.CurrentDomain.FriendlyName;
 			DefaultLogName = string.Format("{0}.log", programName);
 		}
 
