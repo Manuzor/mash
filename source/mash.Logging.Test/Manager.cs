@@ -18,7 +18,7 @@ namespace mash.Logging.Test
 	class TestTarget : Logging.Target.IBase
 	{
 		public string LastLoggedMessage { get; set; }
-		public MessageLevel LastLoggedMessageLevel { get; set; }
+		public Logging.MessageLevel LastLoggedMessageLevel { get; set; }
 		public bool MessageLogged { get; set; }
 		public bool Disposed { get; set; }
 
@@ -27,7 +27,7 @@ namespace mash.Logging.Test
 			reset();
 		}
 
-		public void logMessage(string message, MessageLevel level = MessageLevel.Normal)
+		public void logMessage(string message, Logging.MessageLevel level = Logging.MessageLevel.Normal)
 		{
 			LastLoggedMessage = message;
 			LastLoggedMessageLevel = level;
@@ -42,7 +42,7 @@ namespace mash.Logging.Test
 		public void reset()
 		{
 			LastLoggedMessage = null;
-			LastLoggedMessageLevel = MessageLevel.None;
+			LastLoggedMessageLevel = Logging.MessageLevel.None;
 			MessageLogged = false;
 			Disposed = false;
 		}
@@ -69,7 +69,7 @@ namespace mash.Logging.Test
 
 			Assert.False(target.MessageLogged);
 			Assert.False(target.Disposed);
-			Assert.AreEqual(target.LastLoggedMessageLevel, MessageLevel.None);
+			Assert.AreEqual(target.LastLoggedMessageLevel, Logging.MessageLevel.None);
 
 			Assert.AreEqual(manager.Targets.Count, 0);
 
@@ -85,7 +85,7 @@ namespace mash.Logging.Test
 
 			Assert.False(target.MessageLogged);
 			Assert.False(target.Disposed);
-			Assert.AreEqual(target.LastLoggedMessageLevel, MessageLevel.None);
+			Assert.AreEqual(target.LastLoggedMessageLevel, Logging.MessageLevel.None);
 
 			Assert.AreEqual(manager.Targets.Count, 0);
 
@@ -106,24 +106,24 @@ namespace mash.Logging.Test
 			Assert.False(target.Disposed);
 			Assert.False(target.MessageLogged);
 			Assert.Null(target.LastLoggedMessage);
-			Assert.AreEqual(target.LastLoggedMessageLevel, MessageLevel.None);
+			Assert.AreEqual(target.LastLoggedMessageLevel, Logging.MessageLevel.None);
 
 			// Log a message
 			manager.logMessage("Hello");
 			Assert.True(target.MessageLogged, "logMessage was not called!");
 			Assert.AreEqual(target.LastLoggedMessage, "Hello");
-			Assert.AreEqual(target.LastLoggedMessageLevel, MessageLevel.Normal);
+			Assert.AreEqual(target.LastLoggedMessageLevel, Logging.MessageLevel.Normal);
 
 			// Reset the target
 			target.reset();
 			Assert.False(target.MessageLogged);
 			Assert.Null(target.LastLoggedMessage);
-			Assert.AreEqual(target.LastLoggedMessageLevel, MessageLevel.None);
+			Assert.AreEqual(target.LastLoggedMessageLevel, Logging.MessageLevel.None);
 
-			manager.logMessage("World", MessageLevel.Critical);
+			manager.logMessage("World", Logging.MessageLevel.Critical);
 			Assert.True(target.MessageLogged, "logMessage was not called!");
 			Assert.AreEqual(target.LastLoggedMessage, "World");
-			Assert.AreEqual(target.LastLoggedMessageLevel, MessageLevel.Critical);
+			Assert.AreEqual(target.LastLoggedMessageLevel, Logging.MessageLevel.Critical);
 		}
 	}
 }
