@@ -44,6 +44,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Manager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\mash.Logging\mash.Logging.csproj">
+      <Project>{56a5c763-05c5-4894-9cfc-7e17d102bb33}</Project>
+      <Name>mash.Logging</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
