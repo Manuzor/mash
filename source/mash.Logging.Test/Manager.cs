@@ -27,7 +27,7 @@ namespace mash.Logging.Test
 			reset();
 		}
 
-		public void logMessage(string message, Logging.MessageLevel level = Logging.MessageLevel.Normal)
+		public void write(string message, Logging.MessageLevel level = Logging.MessageLevel.Normal)
 		{
 			LastLoggedMessage = message;
 			LastLoggedMessageLevel = level;
@@ -109,8 +109,8 @@ namespace mash.Logging.Test
 			Assert.AreEqual(target.LastLoggedMessageLevel, Logging.MessageLevel.None);
 
 			// Log a message
-			manager.logMessage("Hello");
-			Assert.True(target.MessageLogged, "logMessage was not called!");
+			manager.write("Hello");
+			Assert.True(target.MessageLogged, "write was not called!");
 			Assert.AreEqual(target.LastLoggedMessage, "Hello");
 			Assert.AreEqual(target.LastLoggedMessageLevel, Logging.MessageLevel.Normal);
 
@@ -120,8 +120,8 @@ namespace mash.Logging.Test
 			Assert.Null(target.LastLoggedMessage);
 			Assert.AreEqual(target.LastLoggedMessageLevel, Logging.MessageLevel.None);
 
-			manager.logMessage("World", Logging.MessageLevel.Critical);
-			Assert.True(target.MessageLogged, "logMessage was not called!");
+			manager.write("World", Logging.MessageLevel.Critical);
+			Assert.True(target.MessageLogged, "write was not called!");
 			Assert.AreEqual(target.LastLoggedMessage, "World");
 			Assert.AreEqual(target.LastLoggedMessageLevel, Logging.MessageLevel.Critical);
 		}

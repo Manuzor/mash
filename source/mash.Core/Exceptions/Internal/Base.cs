@@ -19,7 +19,7 @@
 
 		protected override void logMessage(string message)
 		{
-			Logging.Manager.Instance.logMessage(message, Logging.MessageLevel.Critical);
+			Logging.Manager.Instance.write(message, Logging.MessageLevel.Critical);
 		}
 	}
 }

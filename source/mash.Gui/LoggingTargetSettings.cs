@@ -10,7 +10,7 @@ namespace mash.Logging.Target
 		IBase
 	{
 
-		public void logMessage(string message, MessageLevel level = MessageLevel.Normal)
+		public void write(string message, MessageLevel level = MessageLevel.Normal)
 		{
 			message = string.Format("{0}: {1}", DateTime.Now, message);
 			Gui.Properties.Settings.Default.GlobalLog += message;

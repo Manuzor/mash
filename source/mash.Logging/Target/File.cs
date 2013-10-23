@@ -26,7 +26,7 @@ namespace mash.Logging.Target
 		{
 			None = 0,                 // Default options.
 			CreateDirectory = 1 << 0, // Create the directory of the file if it does not exist already.
-			AutoFlush = 1 << 1        // Automatically flush after every call to logMessage.
+			AutoFlush = 1 << 1        // Automatically flush after every call to write.
 		}
 		#endregion
 
@@ -53,13 +53,12 @@ namespace mash.Logging.Target
 			_fileStream.AutoFlush = TargetOptions.HasFlag(Options.AutoFlush);
 		}
 
-		public void logMessage(string message, MessageLevel level = MessageLevel.Normal)
+		public void write(string message, MessageLevel level = MessageLevel.Normal)
 		{
-			_fileStream.Write(string.Format("[{0}] {1}: {2}{3}",
+			_fileStream.Write(string.Format("[{0}] {1}: {2}",
 				Enum.GetName(typeof(MessageLevel), level),
 				DateTime.Now,
-				message,
-				Properties.Settings.Default.NewLine));
+				message));
 		}
 
 		public void Dispose()

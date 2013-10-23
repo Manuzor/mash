@@ -8,10 +8,24 @@ namespace mash.Logging
 {
 	public delegate void MessageDelegate(string message, MessageLevel level = MessageLevel.Normal);
 
-	public class Manager
+	public interface IManager
+	{
+		IList<Target.IBase> Targets { get; }
+
+		void write(string message, MessageLevel level = MessageLevel.Normal);
+		void writeln(string message, MessageLevel level = MessageLevel.Normal);
+		void writef(string message, MessageLevel level = MessageLevel.Normal, params object[] args);
+		void writefln(string message, MessageLevel level = MessageLevel.Normal, params object[] args);
+	}
+
+	public class Manager :
+		IManager
 	{
 		#region Static
-		public static Manager Instance { get; protected set; }
+		/// <summary>
+		/// Gets or sets the globally accessible instance of the current log manager.
+		/// </summary>
+		public static IManager Instance { get; set; }
 
 		static Manager()
 		{
@@ -29,7 +43,7 @@ namespace mash.Logging
 			Targets = new List<Target.IBase>();
 		}
 
-		public virtual void logMessage(string message, MessageLevel level = MessageLevel.Normal)
+		public virtual void write(string message, MessageLevel level = MessageLevel.Normal)
 		{
 			if (OnMessageLogging != null)
 			{
@@ -38,13 +52,31 @@ namespace mash.Logging
 
 			foreach (var target in Targets)
 			{
-				target.logMessage(message, level);
+				target.write(message, level);
 			}
 
 			if (OnMessageLogged != null)
 			{
 				OnMessageLogged(message, level);
 			}
+		}
+
+		public void writeln(string message, MessageLevel level = MessageLevel.Normal)
+		{
+			message = string.Format("{0}{1}", message, Properties.Settings.Default.NewLine);
+			write(message);
+		}
+
+		public void writef(string message, MessageLevel level = MessageLevel.Normal, params object[] args)
+		{
+			message = string.Format(message, args);
+			write(message, level);
+		}
+
+		public void writefln(string message, MessageLevel level = MessageLevel.Normal, params object[] args)
+		{
+			message = string.Format(message, args);
+			writeln(message, level);
 		}
 	}
 }

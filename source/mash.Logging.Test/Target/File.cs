@@ -47,8 +47,8 @@ namespace mash.Logging.Test.Target
 					Assert.True(System.IO.File.Exists(target.FileName), "File could not be created: {0}", target.FileName);
 					Assert.True(Directory.Exists(fileinfo.Directory.FullName), "Directory was not created!");
 
-					target.logMessage("This is a log message!");
-					target.logMessage("And here is another one...");
+					target.write("This is a log message!");
+					target.write("And here is another one...");
 				}
 			}
 		}

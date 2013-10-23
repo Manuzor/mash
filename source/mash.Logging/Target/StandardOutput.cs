@@ -45,7 +45,7 @@ namespace mash.Logging.Target
 			}
 		}
 
-		public void logMessage(string message, MessageLevel level = MessageLevel.Normal)
+		public void write(string message, MessageLevel level = MessageLevel.Normal)
 		{
 			message = string.Format("{0}: {1}", DateTime.Now, message);
 			if (ColorScheme.ContainsKey(level))
