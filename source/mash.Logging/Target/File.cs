@@ -29,8 +29,8 @@ namespace mash.Logging.Target
 
 		public File(string filename, bool tryToCreateIfNotExists = true)
 		{
-			FileName = filename;
-			var fi = new FileInfo(FileName);
+			var fi = new FileInfo(Environment.ExpandEnvironmentVariables(filename));
+			FileName = fi.FullName;
 			if (tryToCreateIfNotExists)
 			{
 				Directory.CreateDirectory(fi.Directory.FullName);
