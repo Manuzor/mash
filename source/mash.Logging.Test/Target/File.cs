@@ -15,7 +15,11 @@ namespace mash.Logging.Test.Target
 		public void test000_BasicCreation()
 		{
 			var target = new Logging.Target.File();
-			Assert.AreEqual(target.FileName, Logging.Target.File.DefaultLogName);
+
+			var fi = new FileInfo(Environment.ExpandEnvironmentVariables(Logging.Target.File.DefaultLogName));
+			var defaultLogName = fi.FullName;
+
+			Assert.AreEqual(target.FileName, defaultLogName);
 		}
 
 		[TestCase]
@@ -42,6 +46,9 @@ namespace mash.Logging.Test.Target
 					Assert.AreEqual(target.FileName, fileinfo.FullName, "Filenames don't match! Was the Logging.Target.File implementation altered to not use absolute paths?");
 					Assert.True(System.IO.File.Exists(target.FileName), "File could not be created: {0}", target.FileName);
 					Assert.True(Directory.Exists(fileinfo.Directory.FullName), "Directory was not created!");
+
+					target.logMessage("This is a log message!");
+					target.logMessage("And here is another one...");
 				}
 			}
 		}
