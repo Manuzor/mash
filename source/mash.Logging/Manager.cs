@@ -38,7 +38,7 @@ namespace mash.Logging
 
 			foreach (var target in Targets)
 			{
-				target.logMessage(message, level);
+				target.write(message, level);
 			}
 
 			if (OnMessageLogged != null)

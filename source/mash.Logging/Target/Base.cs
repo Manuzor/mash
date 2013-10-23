@@ -8,6 +8,6 @@ namespace mash.Logging.Target
 {
 	public interface IBase : System.IDisposable
 	{
-		void logMessage(string message, MessageLevel level = MessageLevel.Normal);
+		void write(string message, MessageLevel level = MessageLevel.Normal);
 	}
 }
