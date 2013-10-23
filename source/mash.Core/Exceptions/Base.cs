@@ -24,7 +24,7 @@ namespace mash.Core.Exceptions
 		[Conditional("DEBUG")]
 		protected virtual void logMessage(string message)
 		{
-			Logging.Manager.Instance.logMessage(message, Logging.MessageLevel.Warning);
+			Logging.Manager.Instance.write(message, Logging.MessageLevel.Warning);
 		}
 	}
 }
