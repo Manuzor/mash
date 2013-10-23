@@ -52,5 +52,39 @@ namespace mash.Logging.Test.Target
 				}
 			}
 		}
+
+		[TestCase]
+		public void test010_Options()
+		{
+			using (var target = new Logging.Target.File("test010_0.log"))
+			{
+				Assert.False(target.TargetOptions.HasFlag(Logging.Target.File.Options.CreateDirectory));
+				Assert.False(target.TargetOptions.HasFlag(Logging.Target.File.Options.AutoFlush));
+			}
+
+			using (var target = new Logging.Target.File(
+				"test010_1.log",
+				Logging.Target.File.Options.CreateDirectory))
+			{
+				Assert.True(target.TargetOptions.HasFlag(Logging.Target.File.Options.CreateDirectory));
+				Assert.False(target.TargetOptions.HasFlag(Logging.Target.File.Options.AutoFlush));
+			}
+
+			using (var target = new Logging.Target.File(
+				"test010_2.log",
+				Logging.Target.File.Options.AutoFlush))
+			{
+				Assert.True(target.TargetOptions.HasFlag(Logging.Target.File.Options.AutoFlush));
+				Assert.False(target.TargetOptions.HasFlag(Logging.Target.File.Options.CreateDirectory));
+			}
+
+			using (var target = new Logging.Target.File(
+				"test010_3.log",
+				Logging.Target.File.Options.CreateDirectory | Logging.Target.File.Options.AutoFlush))
+			{
+				Assert.True(target.TargetOptions.HasFlag(Logging.Target.File.Options.CreateDirectory));
+				Assert.True(target.TargetOptions.HasFlag(Logging.Target.File.Options.AutoFlush));
+			}
+		}
 	}
 }
