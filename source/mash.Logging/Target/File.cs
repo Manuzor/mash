@@ -40,10 +40,11 @@ namespace mash.Logging.Target
 
 		public void logMessage(string message, MessageLevel level = MessageLevel.Normal)
 		{
-			_fileStream.Write(string.Format("[{0}] {1}: {2}",
+			_fileStream.Write(string.Format("[{0}] {1}: {2}{3}",
 				Enum.GetName(typeof(MessageLevel), level),
 				DateTime.Now,
-				message));
+				message,
+				Properties.Settings.Default.NewLine));
 		}
 
 		public void Dispose()
