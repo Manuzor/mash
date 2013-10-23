@@ -26,4 +26,6 @@ ipch
 *.opensdf
 *.psess
 *.suo
-source/mash.VisualState.xml
+
+# Unnecessary NUnit files
+*.VisualState.xml
