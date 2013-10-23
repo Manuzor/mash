@@ -10,6 +10,8 @@ namespace mash.Logging
 
 	public interface IManager
 	{
+		IList<Target.IBase> Targets { get; }
+
 		void write(string message, MessageLevel level = MessageLevel.Normal);
 		void writeln(string message, MessageLevel level = MessageLevel.Normal);
 		void writef(string message, MessageLevel level = MessageLevel.Normal, params object[] args);
@@ -20,7 +22,10 @@ namespace mash.Logging
 		IManager
 	{
 		#region Static
-		public static Manager Instance { get; protected set; }
+		/// <summary>
+		/// Gets or sets the globally accessible instance of the current log manager.
+		/// </summary>
+		public static IManager Instance { get; set; }
 
 		static Manager()
 		{
