@@ -16,7 +16,6 @@ namespace mash.Logging.Test.Target
 		{
 			var target = new Logging.Target.File();
 			Assert.AreEqual(target.FileName, Logging.Target.File.DefaultLogName);
-			//Assert.AreSame(target.FileName, Logging.Target.File.DefaultLogName);
 		}
 
 		[TestCase]
@@ -31,11 +30,19 @@ namespace mash.Logging.Test.Target
 
 			foreach (var filename in filenames)
 			{
-				var fileinfo = new FileInfo(filename);
-				var target = new Logging.Target.File(filename);
-				Assert.AreEqual(target.FileName, filename);
-				Assert.True(Directory.Exists(fileinfo.Directory.FullName), "Directory was not created!");
-				Assert.True(fileinfo.Exists, "File could not be created.");
+				var fileinfo = new FileInfo(Environment.ExpandEnvironmentVariables(filename));
+
+				if (System.IO.File.Exists(fileinfo.FullName))
+				{
+					System.IO.File.Delete(fileinfo.FullName);
+				}
+
+				using (var target = new Logging.Target.File(filename))
+				{
+					Assert.AreEqual(target.FileName, fileinfo.FullName, "Filenames don't match! Was the Logging.Target.File implementation altered to not use absolute paths?");
+					Assert.True(System.IO.File.Exists(target.FileName), "File could not be created: {0}", target.FileName);
+					Assert.True(Directory.Exists(fileinfo.Directory.FullName), "Directory was not created!");
+				}
 			}
 		}
 	}
