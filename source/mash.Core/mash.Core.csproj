@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\binary\mash.Core\bin_d\</OutputPath>
+    <OutputPath>..\..\build\mash.Core\bin_d\</OutputPath>
     <BaseIntermediateOutputPath>..\..\temp\mashCore\</BaseIntermediateOutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -25,7 +25,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\binary\mash.Core\bin\</OutputPath>
+    <OutputPath>..\..\build\mash.Core\bin\</OutputPath>
     <BaseIntermediateOutputPath>..\..\temp\mashCore\</BaseIntermediateOutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
