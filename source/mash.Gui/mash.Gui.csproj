@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\binary\mash.Gui\bin_d\</OutputPath>
+    <OutputPath>..\..\build\mash.Gui\bin_d\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -26,12 +26,15 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\binary\mash.Gui\bin\</OutputPath>
+    <OutputPath>..\..\build\mash.Gui\bin\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="logging">
+      <HintPath>..\..\library\logging\logging\bin\logging.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -107,10 +110,6 @@
     <ProjectReference Include="..\mash.Core\mash.Core.csproj">
       <Project>{c18783fb-440d-45c7-8757-2c7c9595abaf}</Project>
       <Name>mash.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\mash.Logging\mash.Logging.csproj">
-      <Project>{56a5c763-05c5-4894-9cfc-7e17d102bb33}</Project>
-      <Name>mash.Logging</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
