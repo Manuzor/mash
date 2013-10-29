@@ -29,6 +29,11 @@ namespace mash.Gui.Controls
 		{
 			if (e.KeyData == Keys.Enter)
 			{
+				if (input.Text.StartsWith("x"))
+				{
+					logging.Manager.Instance.write(input.Text);
+				}
+
 				console.Text += string.Format("{0}{1}{2}", input.Text, Environment.NewLine, _onEnter);
 				input.Text = string.Empty;
 			}

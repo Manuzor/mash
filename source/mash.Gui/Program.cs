@@ -16,7 +16,6 @@ namespace mash.Gui
 		{
 			logging.Manager.Instance.Targets.Add(new logging.Target.File("mashGUI.log"));
 			logging.Manager.Instance.Targets.Add(new logging.Target.StandardOutput());
-			logging.Manager.Instance.Targets.Add(new logging.Target.Settings());
 
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);

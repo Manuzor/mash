@@ -44,6 +44,9 @@ namespace mash.Gui.Forms
 			addShell("shell");
 
 			LogWindow = new LogWindow();
+			// Needed to properly initialize the window.
+			LogWindow.Show();
+			LogWindow.Hide();
 		}
 
 		private TabPage addShell(string name)

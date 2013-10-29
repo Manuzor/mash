@@ -42,7 +42,6 @@
 			this.logTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
 			this.logTextBox.Size = new System.Drawing.Size(453, 353);
 			this.logTextBox.TabIndex = 0;
-			this.logTextBox.Text = global::mash.Gui.Properties.Settings.Default.GlobalLog;
 			this.logTextBox.WordWrap = false;
 			// 
 			// LogWindow
