@@ -1,4 +1,0 @@
-[submodule "logging.build"]
-	path = library/logging
-	url = git@bitbucket.org:Manuzor/logging.build.git
-	branch = master
