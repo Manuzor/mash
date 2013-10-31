@@ -97,7 +97,6 @@
 			// 
 			this.globalStatus.Name = "globalStatus";
 			this.globalStatus.Size = new System.Drawing.Size(42, 18);
-			settings1.GlobalLog = "";
 			settings1.GlobalStatusLine = "Ready.";
 			settings1.MasterFormTitle = "Mash";
 			settings1.SettingsKey = "";

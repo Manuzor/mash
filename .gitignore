@@ -1,5 +1,3 @@
-!.gitignore
-
 #ignore thumbnails created by windows
 [Tt]humbs.db
 #Ignore files built by Visual Studio
@@ -26,3 +24,15 @@ ipch
 *.opensdf
 *.psess
 *.suo
+
+# Unnecessary NUnit files
+*.VisualState.xml
+
+# Folders to keep
+binary/
+!binary/.gitkeep
+temp/
+!temp/.gitkeep
+
+# Never ignore this file itself.
+!.gitignore

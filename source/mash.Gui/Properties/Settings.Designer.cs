@@ -58,17 +58,5 @@ namespace mash.Gui.Properties {
                 this["StatusProgress"] = value;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string GlobalLog {
-            get {
-                return ((string)(this["GlobalLog"]));
-            }
-            set {
-                this["GlobalLog"] = value;
-            }
-        }
     }
 }

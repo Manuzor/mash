@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\binary\mash.Core\bin_d\</OutputPath>
+    <OutputPath>..\..\build\mash.Core\bin_d\</OutputPath>
     <BaseIntermediateOutputPath>..\..\temp\mashCore\</BaseIntermediateOutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -25,13 +25,16 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\binary\mash.Core\bin\</OutputPath>
+    <OutputPath>..\..\build\mash.Core\bin\</OutputPath>
     <BaseIntermediateOutputPath>..\..\temp\mashCore\</BaseIntermediateOutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="logging">
+      <HintPath>..\..\library\logging\logging\bin\logging.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,12 +48,6 @@
     <Compile Include="Exceptions\Internal\Base.cs" />
     <Compile Include="Exceptions\InvalidArgument.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\mash.Logging\mash.Logging.csproj">
-      <Project>{56a5c763-05c5-4894-9cfc-7e17d102bb33}</Project>
-      <Name>mash.Logging</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

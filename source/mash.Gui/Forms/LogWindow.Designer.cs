@@ -33,8 +33,10 @@
 			// 
 			// logTextBox
 			// 
-			this.logTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::mash.Gui.Properties.Settings.Default, "GlobalLog", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.logTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
 			this.logTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.logTextBox.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.logTextBox.ForeColor = System.Drawing.Color.Gainsboro;
 			this.logTextBox.Location = new System.Drawing.Point(0, 0);
 			this.logTextBox.Multiline = true;
 			this.logTextBox.Name = "logTextBox";
@@ -42,7 +44,7 @@
 			this.logTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
 			this.logTextBox.Size = new System.Drawing.Size(453, 353);
 			this.logTextBox.TabIndex = 0;
-			this.logTextBox.Text = global::mash.Gui.Properties.Settings.Default.GlobalLog;
+			this.logTextBox.WordWrap = false;
 			// 
 			// LogWindow
 			// 

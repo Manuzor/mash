@@ -2,17 +2,11 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mash.Core", "mash.Core\mash.Core.csproj", "{C18783FB-440D-45C7-8757-2C7C9595ABAF}"
-	ProjectSection(ProjectDependencies) = postProject
-		{56A5C763-05C5-4894-9CFC-7E17D102BB33} = {56A5C763-05C5-4894-9CFC-7E17D102BB33}
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mash.Gui", "mash.Gui\mash.Gui.csproj", "{F607B084-3876-4523-ABC7-4EECD5DBA0B1}"
 	ProjectSection(ProjectDependencies) = postProject
-		{56A5C763-05C5-4894-9CFC-7E17D102BB33} = {56A5C763-05C5-4894-9CFC-7E17D102BB33}
 		{C18783FB-440D-45C7-8757-2C7C9595ABAF} = {C18783FB-440D-45C7-8757-2C7C9595ABAF}
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mash.Logging", "mash.Logging\mash.Logging.csproj", "{56A5C763-05C5-4894-9CFC-7E17D102BB33}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,10 +22,6 @@ Global
 		{F607B084-3876-4523-ABC7-4EECD5DBA0B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F607B084-3876-4523-ABC7-4EECD5DBA0B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F607B084-3876-4523-ABC7-4EECD5DBA0B1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{56A5C763-05C5-4894-9CFC-7E17D102BB33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{56A5C763-05C5-4894-9CFC-7E17D102BB33}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{56A5C763-05C5-4894-9CFC-7E17D102BB33}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{56A5C763-05C5-4894-9CFC-7E17D102BB33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

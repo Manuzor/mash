@@ -34,12 +34,12 @@
 			// 
 			// console
 			// 
-			this.console.BackColor = System.Drawing.Color.Black;
+			this.console.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
 			this.console.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.console.Cursor = System.Windows.Forms.Cursors.Arrow;
 			this.console.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.console.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.console.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.console.ForeColor = System.Drawing.Color.Gainsboro;
 			this.console.Location = new System.Drawing.Point(0, 0);
 			this.console.Margin = new System.Windows.Forms.Padding(0);
 			this.console.Multiline = true;
@@ -54,12 +54,12 @@
 			// 
 			this.input.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
 			this.input.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
-			this.input.BackColor = System.Drawing.Color.Black;
+			this.input.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
 			this.input.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.input.Cursor = System.Windows.Forms.Cursors.IBeam;
 			this.input.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.input.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.input.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.input.ForeColor = System.Drawing.Color.Gainsboro;
 			this.input.HideSelection = false;
 			this.input.Location = new System.Drawing.Point(0, 368);
 			this.input.Margin = new System.Windows.Forms.Padding(0);
