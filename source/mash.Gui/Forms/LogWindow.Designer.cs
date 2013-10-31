@@ -33,7 +33,10 @@
 			// 
 			// logTextBox
 			// 
+			this.logTextBox.BackColor = System.Drawing.Color.Black;
 			this.logTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.logTextBox.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.logTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
 			this.logTextBox.Location = new System.Drawing.Point(0, 0);
 			this.logTextBox.Multiline = true;
 			this.logTextBox.Name = "logTextBox";
