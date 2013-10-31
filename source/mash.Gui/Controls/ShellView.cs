@@ -29,10 +29,13 @@ namespace mash.Gui.Controls
 		{
 			if (e.KeyData == Keys.Enter)
 			{
-				string cmd_logging = "/log";
+				string cmd_logging = "/log ";
 				if (input.Text.StartsWith(cmd_logging))
 				{
-					logging.Manager.Instance.write(input.Text.Substring(cmd_logging.Length));
+					if (input.Text.Length > cmd_logging.Length)
+					{
+						logging.Manager.Instance.write(input.Text.Substring(cmd_logging.Length));
+					}
 				}
 				else
 				{
