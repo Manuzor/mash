@@ -29,12 +29,15 @@ namespace mash.Gui.Controls
 		{
 			if (e.KeyData == Keys.Enter)
 			{
-				if (input.Text.StartsWith("x"))
+				string cmd_logging = "/log";
+				if (input.Text.StartsWith(cmd_logging))
 				{
-					logging.Manager.Instance.write(input.Text);
+					logging.Manager.Instance.write(input.Text.Substring(cmd_logging.Length));
 				}
-
-				console.Text += string.Format("{0}{1}{2}", input.Text, Environment.NewLine, _onEnter);
+				else
+				{
+					console.Text += string.Format("{0}{1}{2}", input.Text, Environment.NewLine, _onEnter);
+				}
 				input.Text = string.Empty;
 			}
 		}

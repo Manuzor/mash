@@ -33,7 +33,6 @@
 			// 
 			// logTextBox
 			// 
-			this.logTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::mash.Gui.Properties.Settings.Default, "GlobalLog", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.logTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.logTextBox.Location = new System.Drawing.Point(0, 0);
 			this.logTextBox.Multiline = true;
