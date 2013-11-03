@@ -29,10 +29,8 @@ ipch
 *.VisualState.xml
 
 # Folders to keep
-binary/
-!binary/.gitkeep
+build/
 temp/
-!temp/.gitkeep
 
 # Never ignore this file itself.
 !.gitignore
