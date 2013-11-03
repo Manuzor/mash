@@ -1,9 +1,9 @@
 <DProject>
- <ProjectGuid>{5B5039E3-C94E-43EF-9EF2-F5BA4097FBF2}</ProjectGuid>
+ <ProjectGuid>{CF753C4C-BCD3-4529-A787-6F76FB041FD5}</ProjectGuid>
  <Config name="Debug" platform="Win32">
   <obj>0</obj>
   <link>0</link>
-  <lib>1</lib>
+  <lib>0</lib>
   <subsystem>0</subsystem>
   <multiobj>0</multiobj>
   <singleFileCompilation>0</singleFileCompilation>
@@ -47,10 +47,10 @@
   <compiler>0</compiler>
   <otherDMD>0</otherDMD>
   <program>$(DMDInstallDir)windows\bin\dmd.exe</program>
-  <imppath />
+  <imppath>../../build/$(ProjectName)/mash.core/lib/mash.core.lib</imppath>
   <fileImppath />
-  <outdir>../../build/$(ProjectName)/$(ConfigurationName)/lib</outdir>
-  <objdir>../../temp/$(ProjectName)/$(ConfigurationName)/lib</objdir>
+  <outdir>../../build/$(ProjectName)/$(ConfigurationName)/bin</outdir>
+  <objdir>../../temp/$(ProjectName)/$(ConfigurationName)/bin</objdir>
   <objname />
   <libname />
   <doDocComments>0</doDocComments>
@@ -87,7 +87,7 @@
   <libpaths />
   <deffile />
   <resfile />
-  <exefile>$(OutDir)\$(ProjectName).lib</exefile>
+  <exefile>$(OutDir)\$(ProjectName).exe</exefile>
   <useStdLibPath>1</useStdLibPath>
   <additionalOptions />
   <preBuildCommand />
@@ -97,7 +97,7 @@
  <Config name="Release" platform="Win32">
   <obj>0</obj>
   <link>0</link>
-  <lib>1</lib>
+  <lib>0</lib>
   <subsystem>0</subsystem>
   <multiobj>0</multiobj>
   <singleFileCompilation>0</singleFileCompilation>
@@ -141,10 +141,10 @@
   <compiler>0</compiler>
   <otherDMD>0</otherDMD>
   <program>$(DMDInstallDir)windows\bin\dmd.exe</program>
-  <imppath />
+  <imppath>../../build/$(ProjectName)/mash.core/lib/mash.core.lib</imppath>
   <fileImppath />
-  <outdir>../../build/$(ProjectName)/$(ConfigurationName)/lib</outdir>
-  <objdir>../../temp/$(ProjectName)/$(ConfigurationName)/lib</objdir>
+  <outdir>../../build/$(ProjectName)/$(ConfigurationName)/bin</outdir>
+  <objdir>../../temp/$(ProjectName)/$(ConfigurationName)/bin</objdir>
   <objname />
   <libname />
   <doDocComments>0</doDocComments>
@@ -181,7 +181,7 @@
   <libpaths />
   <deffile />
   <resfile />
-  <exefile>$(OutDir)\$(ProjectName).lib</exefile>
+  <exefile>$(OutDir)\$(ProjectName).exe</exefile>
   <useStdLibPath>1</useStdLibPath>
   <additionalOptions />
   <preBuildCommand />
@@ -191,7 +191,7 @@
  <Config name="Debug" platform="x64">
   <obj>0</obj>
   <link>0</link>
-  <lib>1</lib>
+  <lib>0</lib>
   <subsystem>0</subsystem>
   <multiobj>0</multiobj>
   <singleFileCompilation>0</singleFileCompilation>
@@ -235,10 +235,10 @@
   <compiler>0</compiler>
   <otherDMD>0</otherDMD>
   <program>$(DMDInstallDir)windows\bin\dmd.exe</program>
-  <imppath />
+  <imppath>../../build/$(ProjectName)/mash.core/lib/mash.core.lib</imppath>
   <fileImppath />
-  <outdir>../../build/$(ProjectName)/$(ConfigurationName)/lib</outdir>
-  <objdir>../../temp/$(ProjectName)/$(ConfigurationName)/lib</objdir>
+  <outdir>../../build/$(ProjectName)/$(ConfigurationName)/bin</outdir>
+  <objdir>../../temp/$(ProjectName)/$(ConfigurationName)/bin</objdir>
   <objname />
   <libname />
   <doDocComments>0</doDocComments>
@@ -275,7 +275,7 @@
   <libpaths />
   <deffile />
   <resfile />
-  <exefile>$(OutDir)\$(ProjectName).lib</exefile>
+  <exefile>$(OutDir)\$(ProjectName).exe</exefile>
   <useStdLibPath>1</useStdLibPath>
   <additionalOptions />
   <preBuildCommand />
@@ -285,7 +285,7 @@
  <Config name="Release" platform="x64">
   <obj>0</obj>
   <link>0</link>
-  <lib>1</lib>
+  <lib>0</lib>
   <subsystem>0</subsystem>
   <multiobj>0</multiobj>
   <singleFileCompilation>0</singleFileCompilation>
@@ -329,10 +329,10 @@
   <compiler>0</compiler>
   <otherDMD>0</otherDMD>
   <program>$(DMDInstallDir)windows\bin\dmd.exe</program>
-  <imppath />
+  <imppath>../../build/$(ProjectName)/mash.core/lib/mash.core.lib</imppath>
   <fileImppath />
-  <outdir>../../build/$(ProjectName)/$(ConfigurationName)/lib</outdir>
-  <objdir>../../temp/$(ProjectName)/$(ConfigurationName)/lib</objdir>
+  <outdir>../../build/$(ProjectName)/$(ConfigurationName)/bin</outdir>
+  <objdir>../../temp/$(ProjectName)/$(ConfigurationName)/bin</objdir>
   <objname />
   <libname />
   <doDocComments>0</doDocComments>
@@ -369,15 +369,14 @@
   <libpaths />
   <deffile />
   <resfile />
-  <exefile>$(OutDir)\$(ProjectName).lib</exefile>
+  <exefile>$(OutDir)\$(ProjectName).exe</exefile>
   <useStdLibPath>1</useStdLibPath>
   <additionalOptions />
   <preBuildCommand />
   <postBuildCommand />
   <filesToClean>*.obj;*.cmd;*.build;*.json;*.dep</filesToClean>
  </Config>
- <Folder name="mash.core">
-  <File path="mash.d" />
-  <File path="thrown.d" />
+ <Folder name="mash.CLI">
+  <File path="main.d" />
  </Folder>
 </DProject>

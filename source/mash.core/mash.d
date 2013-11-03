@@ -1,0 +1,3 @@
+module mash;
+
+import thrown;
